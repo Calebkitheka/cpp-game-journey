@@ -63,3 +63,24 @@ Set up toolchain, initialize repo, compile & run first C++ program.
 ### 🔄 Tomorrow:
 - Conditionals & damage resolution logic
 - Refactor repeated validation into a reusable function
+
+## 📅 Day 5 | May 24, 2026
+### 🎯 Focus: Function Architecture, Scope, Pass-by-Reference, Coordinator Pattern
+### ✅ Completed:
+- Structured battle system with pure logic & I/O separation
+- Kept main() under 15 lines using coordinator pattern
+- Practiced forward declarations & reference passing
+- Compiled with 0 warnings
+
+### ❓ Questions/Blockers:
+- [e.g., "When should I use const reference vs plain reference?"]
+- [e.g., "How do I test pure functions without running the whole game?"]
+
+### 📊 Metrics:
+- Time spent: __ min
+- LOC: ~80
+- Warnings: 0
+
+### 🔄 Tomorrow:
+- Arrays, std::string, inventory management
+- Moving from fixed-size to dynamic containers (std::vector prep)
