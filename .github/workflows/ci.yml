@@ -1,0 +1,43 @@
+name: C++ Game Build Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install SFML Dependencies
+        run: |
+          if [[ "$RUNNER_OS" == "Linux" ]]; then
+            sudo apt update && sudo apt install -y libsfml-dev
+          elif [[ "$RUNNER_OS" == "macOS" ]]; then
+            brew install sfml
+          elif [[ "$RUNNER_OS" == "Windows" ]]; then
+            # Windows CI runners lack GPU drivers; we build console targets only
+            echo "Skipping SFML on Windows CI (headless runner)"
+          fi
+        shell: bash
+
+      - name: Configure CMake
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Upload Binaries
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.os }}
+          path: build/
+          retention-days: 14
