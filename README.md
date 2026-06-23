@@ -1,86 +1,24 @@
-## 📅 Day 1 | May 20, 2026
-### 🎯 Goal:
-Set up toolchain, initialize repo, compile & run first C++ program.
+# 🎮 CPP Game Journey | Pong Prototype
+![CI](https://github.com/yourusername/cpp-game-journey/actions/workflows/ci.yml/badge.svg)
+![C++17](https://img.shields.io/badge/C%2B%2B-17-blue) ![SFML](https://img.shields.io/badge/SFML-2.6-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-### ✅ Completed:
-- Installed g++, CMake, Git, VS Code
-- Created GitHub repo & local folder structure
-- Wrote, compiled, and ran `main.cpp`
-- Pushed to GitHub
+A polished, architecturally sound 2D Pong prototype built in C++ to demonstrate engine fundamentals: state machines, delta-time physics, AABB collision, GPU post-processing, and automated CI/CD.
 
-### ❓ Questions/Blockers:
-- [Fill in what confused you, e.g., "How does -std=c++17 affect compilation?" or "Terminal path issues?"]
+## 📸 Gameplay
+![pong-screenshot](assets/screenshot.png) *(Replace with actual GIF/screenshot)*
 
-### 📊 Metrics:
-- Time spent: __ min
-- Lines of code: 6
-- Compile warnings: __
+## 🛠️ Features
+- ✅ Frame-rate independent movement & physics
+- ✅ Polymorphic state machine (`Menu` → `Play` → `GameOver`)
+- ✅ GPU post-processing (CRT scanlines, vignette, color grading)
+- ✅ Persistent JSON config & high-score saving
+- ✅ Cross-platform CI/CD pipeline (Win/Mac/Linux)
+- ✅ Zero memory leaks (RAII, `unique_ptr`, safe iteration)
 
-### 🔄 Next Step:
-- Start Week 1 C++ fundamentals (variables, types, control flow)
-- Set up VS Code C++ extension for IntelliSense
-EOF
-
-# Windows PowerShell:
-@"
-## 📅 Day 1 | May 20, 2026
-### 🎯 Goal:
-Set up toolchain, initialize repo, compile & run first C++ program.
-
-### ✅ Completed:
-- Installed g++, CMake, Git, VS Code
-- Created GitHub repo & local folder structure
-- Wrote, compiled, and ran main.cpp
-- Pushed to GitHub
-
-### ❓ Questions/Blockers:
-- [Fill in what confused you]
-
-### 📊 Metrics:
-- Time spent: __ min
-- Lines of code: 6
-- Compile warnings: __
-
-### 🔄 Next Step:
-- Start Week 1 C++ fundamentals
-- Set up VS Code C++ extension for IntelliSense
- 
- ## 📅 Day 2 | May 21, 2026
-### 🎯 Focus: Variables, Types, Console I/O & Input Validation
-### ✅ Completed:
-- Wrote stat_calculator.cpp with cin.fail() validation
-- Learned stream clearing & fixed decimal formatting
-- Compiled with -Wall -Wextra, zero warnings
-
-### ❓ Questions/Blockers:
-- [e.g., Why does cin.ignore() need numeric_limits? What happens if I skip it?]
-
-### 📊 Metrics:
-- Time spent: __ min
-- Lines of code: ~65
-- Warnings: 0
-
-### 🔄 Tomorrow:
-- Conditionals & damage resolution logic
-- Refactor repeated validation into a reusable function
-
-## 📅 Day 5 | May 24, 2026
-### 🎯 Focus: Function Architecture, Scope, Pass-by-Reference, Coordinator Pattern
-### ✅ Completed:
-- Structured battle system with pure logic & I/O separation
-- Kept main() under 15 lines using coordinator pattern
-- Practiced forward declarations & reference passing
-- Compiled with 0 warnings
-
-### ❓ Questions/Blockers:
-- [e.g., "When should I use const reference vs plain reference?"]
-- [e.g., "How do I test pure functions without running the whole game?"]
-
-### 📊 Metrics:
-- Time spent: __ min
-- LOC: ~80
-- Warnings: 0
-
-### 🔄 Tomorrow:
-- Arrays, std::string, inventory management
-- Moving from fixed-size to dynamic containers (std::vector prep)
+## 📦 Build & Run
+```bash
+git clone https://github.com/yourusername/cpp-game-journey.git
+cd cpp-game-journey
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+./build/pong  # Windows: .\build\pong.exe
